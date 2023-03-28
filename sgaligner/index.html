@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="SGAligner: Scene Alignment with 3D Scene Graphs">
+  <meta name="keywords" content="SGAligner">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SGAligner</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">SGAligner: Scene Alignment with 3D Scene Graphs</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://sayands.github.io/">Sayan Deb Sarkar</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://miksik.co.uk/">Ondrej Miksik</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://people.inf.ethz.ch/marc.pollefeys/">Marc Pollefeys</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/d%C3%A1niel-bar%C3%A1th-3a489092/">Daniel Barath</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://ir0.github.io/">Iro Armeni</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>ETH Zurich,</span>
+            <span class="author-block"><sup>2</sup>Microsoft Mixed Reality & AI Labs</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/teaser.png" style="max-width:100%" />
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">SGAligner</span> aligns 3D scene graphs of environments using multi-modal learning and leverage the output for the 
+        downstream task of 3D point cloud registration
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Building 3D scene graphs has recently emerged as a topic in scene representation for several embodied AI 
+            applications to represent the world in a structured and rich manner. With their increased use in solving downstream tasks 
+            (eg, navigation and room rearrangement), can we leverage and recycle them for creating 3D maps of environments, 
+            a pivotal step in agent operation? We focus on the fundamental problem of aligning pairs of 3D scene graphs 
+            whose overlap can range from zero to partial and can contain arbitrary changes. 
+            </p>
+            <p>
+            We propose <span class="dnerf">SGAligner</span>, the <strong>first</strong> method for aligning pairs of 3D scene 
+            graphs that is robust to in-the-wild scenarios (ie, unknown overlap -- if any -- and changes in the environment). 
+            We get inspired by multi-modality knowledge graphs and use contrastive learning to learn a joint, multi-modal embedding space. 
+            We evaluate on the 3RScan dataset and further showcase that our method can be used for estimating the
+            transformation between pairs of 3D scenes. Since benchmarks for these tasks are missing, we create 
+            them on this dataset. The code, benchmark, and trained models will be made public.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video 🎬</h2>
+        <div class="publication-video">
+          <iframe src="static/videos/sgaligner.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @misc{sgaligner,
+        title={SGAligner : Scene Alignment with 3D Scene Graphs}, 
+        author={Sayan Deb Sarkar and Ondrej Miksik and Marc Pollefeys and Daniel Barath and Iro Armeni},
+        year={2023},
+        eprint={},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV}
+  }
+    </code></pre>
+  </div>
+</section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              It borrows the source code of <a href="https://github.com/nerfies/nerfies.github.io">this website</a>.
+              We would like to thank Utkarsh Sinha and Keunhong Park.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
