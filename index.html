@@ -89,6 +89,45 @@
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tbody>
+            <tr onmouseout="clipnerf_stop()" onmouseover="clipnerf_start()" bgcolor="#ffffd0">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="three">
+                  <img src='images/sgaligner_teaser.png' width="160">
+                </div>
+                <script type="text/javascript">
+                  function clipnerf_start() {
+                    document.getElementById('clipnerf_image').style.opacity = "1";
+                  }
+
+                  function clipnerf_stop() {
+                    document.getElementById('clipnerf_image').style.opacity = "0";
+                  }
+                  clipnerf_stop()
+                </script>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                  <papertitle>SGAligner : 3D Scene Alignment with Scene Graphs</papertitle>
+                <br>
+                <strong>Sayan Deb Sarkar</strong>, Ondrej Miksik, Marc Pollefeys, Daniel Barath, Iro Armeni
+                <!-- <br> -->
+                <br>
+                <a href="https://arxiv.org/pdf/2304.14880/pdf">arXiv</a> /        
+                <a href="https://sayandebsarkar.com/sgaligner/">Project Page</a> /
+                <a href="https://youtu.be/nBTyZyY9X7I">Video</a> /
+                <a href="https://github.com/sayands/sgaligner">Code</a>
+                <br>
+                <em>arXiv</em>, 2023
+                <br>
+              
+                <p></p>
+                <p>
+                  We focus on the fundamental problem of aligning pairs of 3D scene graphs whose overlap can range from
+                  zero to partial and can contain arbitrary changes. We propose SGAligner, the first method for aligning 
+                  pairs of 3D scene graphs that is robust to in-the-wild scenarios.
+                  </p>
+              </td>
+            </tr> 
+
             <tr onmouseout="clipnerf_stop()" onmouseover="clipnerf_start()">
               <td style="padding:20px;width:25%;vertical-align:middle">
                 <div class="one">
