@@ -20,10 +20,10 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
 
-    :root { --serif: 'Source Serif 4', Charter, 'Iowan Old Style', Georgia, serif; --accent: #5B93D4; --accent-hover: #3A7BC8; --bg: #fff; --ink: #333; --muted: #5e6674; --faint: #8a919c; --line: #e3e5e9; --soft: #f7f7f7; --sep: #b5bac4; --flag-bg: #eef4fb; --award-bg: #fdf3e4; --award-ink: #9a5a10; --award-bg-hover: #fae6c8; --award-ink-hover: #7a4508; color-scheme: light; }
-    :root[data-theme="dark"] { --accent: #7FB0E6; --accent-hover: #A3C7EF; --bg: #121417; --ink: #e4e6ea; --muted: #a3aab5; --faint: #7f8793; --line: #2d323a; --soft: #1b1f24; --sep: #4b515b; --flag-bg: #1c2a3b; --award-bg: #3a2d18; --award-ink: #f0c27a; --award-bg-hover: #4a3a20; --award-ink-hover: #f7d49b; color-scheme: dark; }
+    :root { --serif: 'Source Serif 4', Charter, 'Iowan Old Style', Georgia, serif; --accent: #2b5d8b; --accent-hover: #1e4568; --accent-rgb: 43, 93, 139; --bg: #fff; --ink: #333; --muted: #5e6674; --faint: #8a919c; --line: #e3e5e9; --soft: #f7f7f7; --sep: #b5bac4; --flag-bg: rgba(43, 93, 139, 0.10); --award-bg: #fdf3e4; --award-ink: #9a5a10; --award-bg-hover: #fae6c8; --award-ink-hover: #7a4508; color-scheme: light; }
+    :root[data-theme="dark"] { --accent: #7fa9d4; --accent-hover: #a6c4e4; --accent-rgb: 127, 169, 212; --bg: #121417; --ink: #e4e6ea; --muted: #a3aab5; --faint: #7f8793; --line: #2d323a; --soft: #1b1f24; --sep: #4b515b; --flag-bg: #1c2a3b; --award-bg: #3a2d18; --award-ink: #f0c27a; --award-bg-hover: #4a3a20; --award-ink-hover: #f7d49b; color-scheme: dark; }
     @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) { --accent: #7FB0E6; --accent-hover: #A3C7EF; --bg: #121417; --ink: #e4e6ea; --muted: #a3aab5; --faint: #7f8793; --line: #2d323a; --soft: #1b1f24; --sep: #4b515b; --flag-bg: #1c2a3b; --award-bg: #3a2d18; --award-ink: #f0c27a; --award-bg-hover: #4a3a20; --award-ink-hover: #f7d49b; color-scheme: dark; }
+      :root:not([data-theme="light"]) { --accent: #7fa9d4; --accent-hover: #a6c4e4; --accent-rgb: 127, 169, 212; --bg: #121417; --ink: #e4e6ea; --muted: #a3aab5; --faint: #7f8793; --line: #2d323a; --soft: #1b1f24; --sep: #4b515b; --flag-bg: #1c2a3b; --award-bg: #3a2d18; --award-ink: #f0c27a; --award-bg-hover: #4a3a20; --award-ink-hover: #f7d49b; color-scheme: dark; }
     }
     .theme-toggle { width: 32px; height: 32px; margin-left: 4px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); color: var(--muted); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 15px; transition: color 0.15s, border-color 0.15s; }
     .theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
@@ -70,7 +70,6 @@
     .profile { grid-column: 2; grid-row: 1; text-align: center; padding-top: 6px; }
     .intro-copy { grid-column: 1; grid-row: 1; }
     .portrait { width: 200px; height: 200px; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto 18px; }
-    .intro-copy .name { font-family: var(--serif); font-size: 34px; font-weight: 400; line-height: 1.2; margin: 0 0 16px; }
     .profile-role { font-size: 15px; line-height: 1.5; color: var(--faint); margin: 0 0 2px; }
     .profile-affiliation { font-size: 15px; line-height: 1.5; margin: 0; }
     .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 20px auto 0; }
@@ -87,7 +86,8 @@
     /* Sticky top bar */
     html { scroll-behavior: smooth; }
     section[id], article[id], header[id] { scroll-margin-top: 72px; }
-    .site-nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    .site-nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+    .site-nav::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(var(--accent-rgb), 0.28) 50%, transparent 100%); }
     .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 16px; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .wordmark { font-family: var(--serif); font-size: 18px; color: var(--ink); white-space: nowrap; }
     .wordmark:hover { color: var(--accent); text-decoration: none; }
@@ -108,21 +108,28 @@
     .sec { padding: 16px 0 4px; }
     .sec-title {
       font-family: var(--serif);
-      font-size: 23px;
+      font-size: 24px;
       font-weight: 500;
-      margin: 0 0 10px;
-      padding-bottom: 9px;
-      position: relative;
+      letter-spacing: -0.01em;
+      color: var(--accent);
+      display: inline-block;
+      margin: 0 0 14px;
+      padding-bottom: 7px;
+      background-image: linear-gradient(90deg, var(--accent) 0%, rgba(var(--accent-rgb), 0.4) 55%, rgba(var(--accent-rgb), 0.05) 90%, transparent 100%);
+      background-position: 0 100%;
+      background-size: 100% 2px;
+      background-repeat: no-repeat;
     }
-    .sec-title::after {
+    .sec-title::before {
       content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 40px;
-      height: 3px;
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin: 0 10px 4px 0;
+      vertical-align: middle;
+      border-radius: 50%;
       background: var(--accent);
-      border-radius: 2px;
+      box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.14);
     }
     .sec p { margin: 0 0 8px; font-size: 15px; }
 
@@ -199,11 +206,12 @@
       width: 100%;
       height: auto;
       aspect-ratio: 1.66 / 1;
-      background: var(--soft);
+      background: transparent;
       border: 1px solid var(--line);
       border-radius: 7px;
     }
-    .pub-year { font-size: 15px; font-weight: 700; color: var(--accent); letter-spacing: 0.5px; margin: 28px 0 14px; }
+    .pub-year { font-size: 15px; font-weight: 700; color: var(--accent); letter-spacing: 0.5px; margin: 28px 0 14px;  display: flex; align-items: center; gap: 12px; }
+    .pub-year::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.4) 0%, rgba(var(--accent-rgb), 0.08) 70%, transparent 100%); }
     .publication-note + .pub-year { margin-top: 8px; }
     .paper-meta {
       display: flex;
@@ -218,6 +226,8 @@
       font-weight: 700;
       letter-spacing: 0.4px;
     }
+    .paper-meta .venue-note { margin-left: -4px; color: var(--faint); font-size: 12px; font-style: italic; }
+    .paper-meta .venue-note::before { content: "·"; margin-right: 5px; font-style: normal; }
     .paper-meta .pub-award { margin-left: 0; vertical-align: baseline; }
     a.pub-award:hover { color: var(--award-ink-hover); background: var(--award-bg-hover); }
     .paper-title {
@@ -232,10 +242,9 @@
     .paper .authors strong { color: var(--ink); font-weight: 700; }
     .paper .paper-summary { color: var(--muted); font-size: 13.5px; line-height: 1.6; margin: 0 0 8px !important; }
     .paper-links { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; font-weight: 700; }
-    .paper-links a { color: var(--ink); }
-    .paper-links a:hover { color: var(--accent); }
-    .paper-links i, .talk-link i { margin-right: 5px; color: var(--faint); font-size: 0.92em; transition: color 0.15s; }
-    .paper-links a:hover i, .talk-link:hover i { color: var(--accent); }
+    .paper-links a { color: var(--accent); }
+    .paper-links a:hover { color: var(--accent-hover); text-decoration: none; }
+    .paper-links i, .talk-link i { margin-right: 5px; color: inherit; font-size: 0.92em; opacity: 0.85; }
     .section-link i, .contact-email i { margin-right: 6px; }
     .paper-featured {
       display: flex;
@@ -244,7 +253,7 @@
       gap: 4px 0;
       margin: 10px 0 0;
       padding-top: 8px;
-      border-top: 1px dashed var(--line);
+      background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.3) 0%, rgba(var(--accent-rgb), 0.06) 70%, transparent 100%) top left / 100% 1px no-repeat;
       font-size: 12.5px;
       color: var(--muted);
     }
@@ -272,10 +281,10 @@
 
     /* Research directions (format from taosun.io) */
     .research-directions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 4px; }
-    .direction { border-left: 1px solid var(--line); padding-left: 16px; }
+    .direction { padding-left: 16px; background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.45) 0%, rgba(var(--accent-rgb), 0.08) 85%, transparent 100%) left top / 1px 100% no-repeat; }
     .direction-number { font-size: 12px; font-weight: 700; letter-spacing: 1px; color: var(--accent); }
     .direction h3 { font-family: var(--serif); font-size: 17px; font-weight: 600; margin: 6px 0 6px; color: var(--ink); }
-    .sec .direction p { font-size: 14px; line-height: 1.6; color: var(--muted); margin: 0; }
+    .sec .direction p { font-size: 13px; line-height: 1.6; color: var(--muted); margin: 0; }
     .sec .direction-papers { margin-top: 8px; font-size: 13px; }
     .direction-sep { margin: 0 6px; color: var(--sep); }
 
@@ -286,6 +295,17 @@
     .sec.contact p.contact-text { font-size: 14px; color: var(--muted); margin: 0; }
     .contact-email { font-size: 16px; white-space: nowrap; border-bottom: 1px solid currentColor; padding: 6px 0; }
 
+    /* Background: experience and education */
+    .bg-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; }
+    .bg-heading { font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--ink); margin: 0 0 10px; }
+    .bg-list { list-style: none; margin: 0; padding: 0; }
+    .bg-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 7px 0; }
+    .bg-list li + li { background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.18) 0%, rgba(var(--accent-rgb), 0.04) 80%, transparent 100%) top left / 100% 1px no-repeat; }
+    .bg-main { min-width: 0; }
+    .bg-org { display: block; font-size: 14.5px; font-weight: 600; line-height: 1.4; }
+    .bg-role { display: block; font-size: 13.5px; color: var(--muted); line-height: 1.45; }
+    .bg-date { flex: none; font-size: 13px; color: var(--faint); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
     /* Supervision and Academic Service */
     .col-list { list-style: none; margin: 0; padding: 0; }
     .col-list li { margin: 0 0 12px; font-size: 15px; line-height: 1.5; }
@@ -294,12 +314,20 @@
     .col-detail { color: var(--muted); font-size: 13.5px; margin-top: 2px; }
 
     .footer {
-      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px 16px;
       padding: 20px 0 16px;
       margin-top: 16px;
       font-size: 13px;
       color: var(--muted);
     }
+    .footer a { color: var(--muted); }
+    .footer a:hover { color: var(--accent); text-decoration: none; }
+    .footer a.footer-credit { color: var(--accent); }
+    .footer a.footer-credit:hover { color: var(--accent-hover); }
 
     /* Responsive */
     @media (max-width: 720px) {
@@ -308,20 +336,25 @@
       .profile, .intro-copy { grid-column: 1; }
       .intro-copy { grid-row: 1; }
       .profile { grid-row: 2; }
-      .intro-copy .name { font-size: 26px; text-align: center; }
       .portrait { width: 160px; height: 160px; }
       .sec { padding: 12px 0 2px; }
       .sec-title { font-size: 20px; }
       .pub-thumb { width: 100%; max-width: 260px; height: 140px; margin: 0 auto; }
-      .paper { grid-template-columns: 1fr; gap: 14px; }
+      .paper { grid-template-columns: 1fr; gap: 0; }
+      .paper-content { display: contents; }
+      .paper-meta { order: -1; margin-bottom: 8px; }
       .research-directions { grid-template-columns: 1fr; gap: 18px; }
-      .direction { position: relative; padding-left: 34px; border-left: none; }
+      .direction { position: relative; padding-left: 34px; background: none; }
       .direction-number { position: absolute; left: 0; top: 2px; }
       .direction h3 { margin: 0 0 4px; }
-      .paper .pub-thumb { max-width: 420px; margin: 0; }
+      .paper .pub-thumb { max-width: 420px; margin: 0 0 14px; height: auto; aspect-ratio: auto; }
+      .paper .pub-thumb img, .paper .pub-thumb video { height: auto; }
       .nav-inner { height: auto; padding: 10px 12px; flex-wrap: wrap; gap: 6px 12px; }
       .nav-links { gap: 14px; }
       .nav-links a { font-size: 13px; }
+      .intro-interests ul { flex-direction: column; font-size: 14.5px; }
+      .intro-interests li + li::before { content: none; }
+      .bg-grid { grid-template-columns: 1fr; gap: 20px; }
       .contact { display: block; }
       .contact-email { display: inline-block; margin-top: 16px; }
     }
@@ -356,12 +389,12 @@
         </div>
       </aside>
       <div class="intro-copy">
-        <h1 class="name">Sayan Deb Sarkar</h1>
+        <h2 class="sec-title">About Me</h2>
         <div class="biography">
-          <p>I am a 3rd-year PhD candidate in the <a href="https://gradientspaces.stanford.edu/">Gradient Spaces Group</a> at Stanford University, advised by <a href="https://ir0.github.io/">Iro Armeni</a>, and part of the <a href="https://svl.stanford.edu/">Stanford Vision Lab</a>. During my PhD, I have interned at <a href="https://waymo.com/">Waymo Perception</a>, working on streaming temporal reasoning, and at the <a href="https://www.microsoft.com/en-us/research/lab/spatial-ai-zurich/">Microsoft Spatial AI Lab</a>, working on efficient video tokenization.</p>
+          <p>I am a PhD candidate (2024–) in the <a href="https://gradientspaces.stanford.edu/">Gradient Spaces Group</a> at Stanford University, advised by Prof. <a href="https://ir0.github.io/">Iro Armeni</a>, and part of the <a href="https://svl.stanford.edu/">Stanford Vision Lab</a>. During my PhD, I have interned at <a href="https://waymo.com/">Waymo Perception</a> (Summer ’26), working on streaming temporal reasoning, and at <a href="https://www.microsoft.com/en-us/research/lab/spatial-ai-zurich/">Microsoft Spatial AI Lab</a> (Summer ’25), working on efficient video tokenization. I am partly supported by a <a href="https://arvr.google.com/">Google XR</a> grant on 4D understanding.</p>
           <p>My research focuses on <strong>spatial intelligence</strong> and <strong>multimodal video understanding</strong>. I build efficient visual representations that capture space and time, align real-world 3D scenes across modalities, and enable controllable built-environment generation.</p>
-          <p>Before Stanford, I received my M.Sc. in Computer Science from <a href="https://ethz.ch/en.html">ETH Zurich</a>, advised by <a href="https://people.inf.ethz.ch/marc.pollefeys/">Marc Pollefeys</a>, during which I interned at <a href="https://www.qualcomm.com/research/extended-reality">Qualcomm XR Labs</a> working on real-time SLAM.
-            Earlier, I was a computer vision research engineer at Mercedes-Benz R&amp;D and spent a year in <a href="https://vincentlepetit.github.io/">Vincent Lepetit</a>'s lab at TU Graz working on hand-object pose estimation.</p>
+          <p>Before PhD, I received my M.Sc. in Computer Science from <a href="https://ethz.ch/en.html">ETH Zurich</a>, advised by Prof. <a href="https://people.inf.ethz.ch/marc.pollefeys/">Marc Pollefeys</a>, during which I interned at <a href="https://www.qualcomm.com/research/extended-reality">Qualcomm XR</a> working on real-time SLAM.
+            Earlier, I was a computer vision research engineer at <a href="https://www.mbrdi.co.in/">Mercedes-Benz R&amp;D</a> and spent a year in Prof. <a href="https://vincentlepetit.github.io/">Vincent Lepetit</a>'s lab at TU Graz working on hand-object pose estimation.</p>
         </div>
         <div class="intro-interests">
           <h2>Interests</h2>
@@ -378,28 +411,28 @@
     <section class="sec news" id="news">
       <h2 class="sec-title">News</h2>
       <div class="news-list">
-        <div class="news-item"><time datetime="2026-06">Jun 2026</time><p>I joined <strong><a href="https://waymo.com/" target="_blank">Waymo Perception</a></strong> as a research intern, working on streaming temporal reasoning.</p></div>
+        <div class="news-item"><time datetime="2026-06">Jun 2026</time><p>I joined <strong><a href="https://waymo.com/" target="_blank">Waymo Perception</a></strong> (Mountain View) as a research intern, working on streaming temporal reasoning.</p></div>
         <div class="news-item"><time datetime="2026-05">May 2026</time><p>Recognized as an <span class="pub-award">Outstanding Reviewer</span> at <a href="https://cvpr.thecvf.com/" target="_blank">CVPR 2026</a>. Very proud of this!</p></div>
         <div class="news-item"><time datetime="2026-04">Apr 2026</time><p>Invited talks on <a href="data/invitedtalk_cope_2026.pdf" target="_blank">“Codec Primitives for Efficient Video Understanding”</a> at <strong>Google DeepMind</strong> and <strong>Valeo AI</strong> in Paris.</p></div>
         <div class="news-item"><time datetime="2026-03">Mar 2026</time><p><a href="https://microsoft.github.io/CoPE/" target="_blank">CoPE-VideoLM</a> is out: efficient codec-aware tokenization for video understanding.</p></div>
         <div class="news-item"><time datetime="2026-01">Jan 2026</time><p>Invited talk on <a href="https://sayands.github.io/guideflow3d/" target="_blank">GuideFlow3D</a> at <a href="https://voxel51.com/events/best-of-neurips-january-15-2026" target="_blank">Voxel51 Best of NeurIPS</a>.</p></div>
         <div class="news-item"><time datetime="2025-09">Sep 2025</time><p><a href="https://sayands.github.io/guideflow3d/" target="_blank">GuideFlow3D</a> was accepted to <strong>NeurIPS 2025</strong>. See you in San Diego!</p></div>
         <div class="news-item"><time datetime="2025-07">Jul 2025</time><p>Invited talks on <a href="data/invitedtalk_crossover_2025.pdf" target="_blank">“Scalable Cross-Modal 3D Scene Understanding”</a> at <strong>Google XR Research</strong> and <strong>Imagine Lab</strong>.</p></div>
-        <div class="news-item"><time datetime="2025-06">Jun 2025</time><p>I joined <strong><a href="https://www.microsoft.com/en-us/research/lab/spatial-ai-zurich/" target="_blank">Microsoft Spatial AI Lab</a></strong> as a research intern, working on efficient video tokenization.</p></div>
+        <div class="news-item"><time datetime="2025-06">Jun 2025</time><p>I joined <strong><a href="https://www.microsoft.com/en-us/research/lab/spatial-ai-zurich/" target="_blank">Microsoft Spatial AI Lab</a></strong> (Zurich) as a research intern, working on efficient video tokenization.</p></div>
       </div>
       <details class="news-more">
         <summary><span class="news-show-more">Show more</span><span class="news-show-less">Show less</span></summary>
         <div class="news-list">
           <div class="news-item"><time datetime="2025-03">Mar 2025</time><p><a href="https://sayands.github.io/crossover/" target="_blank">CrossOver</a> was accepted to <strong>CVPR 2025</strong> as a <span class="pub-award">Highlight</span>. See you in Nashville!</p></div>
           <div class="news-item"><time datetime="2024-09">Sep 2024</time><p><span class="news-flag">Career update</span> I joined <strong><a href="https://www.stanford.edu/" target="_blank">Stanford University</a></strong> as a PhD student in Computer Vision.</p></div>
-          <div class="news-item"><time datetime="2023-08">Aug 2023</time><p>I joined <strong><a href="https://www.qualcomm.com/research/extended-reality" target="_blank">Qualcomm XR Labs</a></strong> in Amsterdam as a research intern, working on real-time SLAM for extended reality.</p></div>
+          <div class="news-item"><time datetime="2023-08">Aug 2023</time><p>I joined <strong><a href="https://www.qualcomm.com/research/extended-reality" target="_blank">Qualcomm XR</a></strong> (Amsterdam) as a research intern, working on real-time SLAM for extended reality.</p></div>
           <div class="news-item"><time datetime="2023-07">Jul 2023</time><p><a href="https://sayands.github.io/sgaligner/" target="_blank">SGAligner</a> was accepted to <strong>ICCV 2023</strong>. See you in Paris!</p></div>
           <div class="news-item"><time datetime="2022-09">Sep 2022</time><p>I started my MSc in Computer Science at <strong>ETH Zurich</strong>.</p></div>
           <div class="news-item"><time datetime="2022-07">Jul 2022</time><p><a href="https://arxiv.org/abs/2104.14639" target="_blank">Keypoint Transformer</a> was accepted to <strong>CVPR 2022</strong> as an <span class="pub-award">Oral</span>. See you in New Orleans!</p></div>
-          <div class="news-item"><time datetime="2021-05">May 2021</time><p>I joined <strong>Mercedes-Benz R&amp;D</strong> as a Computer Vision Research Engineer.</p></div>
+          <div class="news-item"><time datetime="2021-05">May 2021</time><p>I joined <strong><a href="https://www.mbrdi.co.in/" target="_blank">Mercedes-Benz R&amp;D</a></strong> as a Computer Vision Research Engineer.</p></div>
           <div class="news-item"><time datetime="2021-03">Mar 2021</time><p><a href="https://arxiv.org/abs/2103.07969" target="_blank">Monte Carlo Scene Search</a> was accepted to <strong>CVPR 2021</strong>.</p></div>
           <div class="news-item"><time datetime="2020-06">Jun 2020</time><p><a href="https://arxiv.org/abs/2001.02149" target="_blank">General 3D Room Layout from a Single View by Render-and-Compare</a> was accepted to <strong>ECCV 2020</strong>.</p></div>
-          <div class="news-item"><time datetime="2020-01">Jan 2020</time><p>I started as a Research Assistant at ICG, TU Graz with Prof. <a href="https://vincentlepetit.github.io/" target="_blank">Vincent Lepetit</a>, supported by a Qualcomm fellowship.</p></div>
+          <div class="news-item"><time datetime="2020-01">Jan 2020</time><p>I started as a Research Assistant at <a href="https://ivc.tugraz.at/" target="_blank">IVC, TU Graz</a> with Prof. <a href="https://vincentlepetit.github.io/" target="_blank">Vincent Lepetit</a>, supported by a Qualcomm fellowship.</p></div>
         </div>
       </details>
     </section>
@@ -410,21 +443,22 @@
         <li class="talk">
           <div class="talk-title">Codec Primitives for Efficient Video Understanding <a class="talk-link" href="data/invitedtalk_cope_2026.pdf" target="_blank"><i class="fa-solid fa-person-chalkboard" aria-hidden="true"></i>Slides</a></div>
           <div class="talk-rows">
-            <div class="talk-row"><span class="talk-date">Apr 2026</span><span class="talk-venue"><a href="https://deepmind.google/" target="_blank">Google DeepMind</a>, Paris<span class="talk-host">Host: <a href="https://16lemoing.github.io/" target="_blank">Guillaume Le Moing</a></span></span></div>
+            <div class="talk-row"><span class="talk-date">Apr 2026</span><span class="talk-venue"><a href="https://deepmind.google/" target="_blank">Google DeepMind</a>, London / Paris<span class="talk-host">Host(s): <a href="https://16lemoing.github.io/" target="_blank">Guillaume Le Moing</a> and <a href="https://tengdahan.github.io/" target="_blank">Tengda Han</a></span></span></div>
             <div class="talk-row"><span class="talk-date">Mar 2026</span><span class="talk-venue"><a href="https://www.valeo.com/en/valeo-ai/" target="_blank">Valeo AI</a>, Paris<span class="talk-host">Host: <a href="https://abursuc.github.io/" target="_blank">Andrei Bursuc</a></span></span></div>
           </div>
         </li>
         <li class="talk">
-          <div class="talk-title">GuideFlow3D: Optimization-Guided Rectified Flow for Appearance Transfer <a class="talk-link" href="https://sayands.github.io/guideflow3d/assets/slides.pdf" target="_blank"><i class="fa-solid fa-person-chalkboard" aria-hidden="true"></i>Slides</a><a class="talk-link" href="https://www.youtube.com/channel/UC9GWqiVDwPdQrW70_v4VtlQ" target="_blank"><i class="fa-brands fa-youtube" aria-hidden="true"></i>Video</a></div>
+          <div class="talk-title">Optimization-Guided Rectified Flow for Appearance Transfer <a class="talk-link" href="https://sayands.github.io/guideflow3d/assets/slides.pdf" target="_blank"><i class="fa-solid fa-person-chalkboard" aria-hidden="true"></i>Slides</a><a class="talk-link" href="https://www.youtube.com/channel/UC9GWqiVDwPdQrW70_v4VtlQ" target="_blank"><i class="fa-brands fa-youtube" aria-hidden="true"></i>Voxel51 Talk</a></div>
           <div class="talk-rows">
-            <div class="talk-row"><span class="talk-date">Jan 2026</span><span class="talk-venue"><a href="https://voxel51.com/events/best-of-neurips-january-15-2026" target="_blank">Voxel51 Best of NeurIPS</a>, Virtual<span class="talk-host">Host: <a href="https://www.linkedin.com/in/jiguerrero/" target="_blank">Jimmy Guerrero</a></span></span></div>
+            <div class="talk-row"><span class="talk-date">Jan 2026</span><span class="talk-venue"><a href="https://voxel51.com/events/best-of-neurips-january-15-2026" target="_blank">Voxel51 Best of NeurIPS</a><span class="talk-host">Host: <a href="https://www.linkedin.com/in/jiguerrero/" target="_blank">Jimmy Guerrero</a></span></span></div>
+            <div class="talk-row"><span class="talk-date">Nov 2025</span><span class="talk-venue"><a href="https://svl.stanford.edu/" target="_blank">SVL Vision Seminar</a> (Student Talks), Stanford<span class="talk-host">Host: <a href="https://jiajunwu.com/" target="_blank">Prof. Jiajun Wu</a></span></span></div>
           </div>
         </li>
         <li class="talk">
           <div class="talk-title">Scalable Cross-Modal 3D Scene Understanding <a class="talk-link" href="data/invitedtalk_crossover_2025.pdf" target="_blank"><i class="fa-solid fa-person-chalkboard" aria-hidden="true"></i>Slides</a></div>
           <div class="talk-rows">
             <div class="talk-row"><span class="talk-date">Nov 2025</span><span class="talk-venue"><a href="https://arvr.google.com/" target="_blank">Google XR Research</a>, Munich<span class="talk-host">Host: <a href="https://scholar.google.com/citations?user=dfjN3YAAAAAJ&hl=en" target="_blank">Johanna Wald</a></span></span></div>
-            <div class="talk-row"><span class="talk-date">Jul 2025</span><span class="talk-venue"><a href="https://imagine-lab.enpc.fr/" target="_blank">Imagine Lab, École des Ponts</a>, Paris<span class="talk-host">Hosts: <a href="https://raphael-baena.github.io/" target="_blank">Raphael Baena</a> and <a href="https://vincentlepetit.github.io/" target="_blank">Prof. Vincent Lepetit</a></span></span></div>
+            <div class="talk-row"><span class="talk-date">Jul 2025</span><span class="talk-venue"><a href="https://imagine-lab.enpc.fr/" target="_blank">Imagine Lab, École des Ponts</a>, Paris<span class="talk-host">Host(s): <a href="https://raphael-baena.github.io/" target="_blank">Raphael Baena</a> and <a href="https://vincentlepetit.github.io/" target="_blank">Prof. Vincent Lepetit</a></span></span></div>
           </div>
         </li>
       </ul>
@@ -465,20 +499,21 @@
         <article class="paper" id="paper-cope-videolm">
           <div class="pub-thumb"><img src="images/cope_teaser.jpg" alt="CoPE-VideoLM" loading="lazy"></div>
           <div class="paper-content">
-            <div class="paper-meta"><span class="venue">Preprint 2026</span><a class="pub-award" href="https://sites.google.com/utwente.nl/video4real/home" target="_blank">Oral @ ECCV 2026 Video4Real Workshop</a></div>
+            <div class="paper-meta"><span class="venue">Preprint</span><span class="venue-note">Under review</span><a class="pub-award" href="https://sites.google.com/utwente.nl/video4real/home" target="_blank">Oral @ ECCV 2026 Video4Real Workshop</a></div>
             <h3 class="paper-title"><a href="https://microsoft.github.io/CoPE/" target="_blank">CoPE-VideoLM: Leveraging Codec Primitives for Efficient Video Language Modeling</a></h3>
             <p class="authors"><strong>Sayan Deb Sarkar</strong>, Rémi Pautrat, Ondrej Miksik, Marc Pollefeys, Iro Armeni, Mahdi Rad†, Mihai Dusmanu†</p>
             <p class="paper-summary">Uses video codec primitives instead of dense per-frame embeddings, cutting time-to-first-token by up to 86% and tokens by up to 93%.</p>
             <div class="paper-links">
               <a href="https://arxiv.org/abs/2602.13191" target="_blank"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i>Paper</a>
               <a href="https://microsoft.github.io/CoPE/" target="_blank"><i class="fa-solid fa-globe" aria-hidden="true"></i>Project</a>
+              <a href="https://x.com/debsarkar_sayan/status/2023472912666411342" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i>Thread</a>
             </div>
           </div>
         </article>
         <article class="paper" id="paper-spaceflow">
           <div class="pub-thumb"><video src="images/spaceflow_teaser.mp4" poster="images/spaceflow_teaser.jpg" autoplay muted loop playsinline preload="metadata" aria-label="SpaceFlow teaser video"></video></div>
           <div class="paper-content">
-            <div class="paper-meta"><span class="venue">Preprint 2026</span></div>
+            <div class="paper-meta"><span class="venue">Preprint</span><span class="venue-note">Under review</span></div>
             <h3 class="paper-title"><a href="https://neilus03.github.io/spaceflow/" target="_blank">SpaceFlow: Locally Controllable 3D Generation</a></h3>
             <p class="authors">Neil De La Fuente*, Joan Lafuente Baeza*, Mukhammadali Sayfiddinov*, Felicia Scharitzer*, Marc Pollefeys, Ata Çelen, <strong>Sayan Deb Sarkar</strong>†, Elisabetta Fedele†</p>
             <p class="paper-summary">Training-free 3D generation from geometric primitives, with per-part control over shape adherence and part-specific text or image appearance cues.</p>
@@ -491,7 +526,7 @@
         <article class="paper" id="paper-famos">
           <div class="pub-thumb"><video src="images/famos_teaser.mp4" poster="images/famos_teaser.jpg" autoplay muted loop playsinline preload="metadata" aria-label="FAMOS"></video></div>
           <div class="paper-content">
-            <div class="paper-meta"><span class="venue">Preprint 2026</span></div>
+            <div class="paper-meta"><span class="venue">Preprint</span><span class="venue-note">Under review</span><a class="pub-award" href="https://diliash.github.io/fai_eccv_workshop_2026/" target="_blank">Poster @ ECCV 2026 FAI Workshop</a></div>
             <h3 class="paper-title"><a href="https://kevinqu7.github.io/famos" target="_blank">FAMOS: Feed-Forward 3D Articulation Modeling from Sparse Observations</a></h3>
             <p class="authors">Kevin Qu, Tao Sun, Massimiliano Viola, Liyuan Zhu, Zhizhuo Zhou, <strong>Sayan Deb Sarkar</strong>, Konrad Schindler, Iro Armeni</p>
             <p class="paper-summary">A feed-forward model that predicts movable parts and joint parameters of articulated objects from a sparse, unordered set of partial point clouds.</p>
@@ -514,6 +549,7 @@
               <a href="https://arxiv.org/abs/2510.16136" target="_blank"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i>Paper</a>
               <a href="https://sayands.github.io/guideflow3d/" target="_blank"><i class="fa-solid fa-globe" aria-hidden="true"></i>Project</a>
               <a href="https://github.com/GradientSpaces/GuideFlow3D" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>
+              <a href="https://x.com/debsarkar_sayan/status/1995606154274373991" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i>Thread</a>
             </div>
             <div class="paper-featured"><span class="featured-label">Featured in</span><a href="https://voxel51.com/events/best-of-neurips-january-15-2026" target="_blank">Voxel51</a></div>
           </div>
@@ -521,7 +557,7 @@
         <article class="paper" id="paper-sgaligner-pp">
           <div class="pub-thumb"><video src="images/sgalignerpp_teaser.mp4" poster="images/sgalignerpp_teaser.jpg" autoplay muted loop playsinline preload="metadata" aria-label="SGAligner++"></video></div>
           <div class="paper-content">
-            <div class="paper-meta"><span class="venue">Preprint 2025</span></div>
+            <div class="paper-meta"><span class="venue">Preprint</span></div>
             <h3 class="paper-title"><a href="https://singhbino3d.github.io/sgpp/" target="_blank">SGAligner++: Cross-Modal Language-Aided 3D Scene Graph Alignment</a></h3>
             <p class="authors">Binod Singh, <strong>Sayan Deb Sarkar</strong>, Iro Armeni</p>
             <p class="paper-summary">Extends SGAligner with open-vocabulary cues and learned joint embeddings to align 3D scene graphs across modalities, even under low overlap and sensor noise.</p>
@@ -535,7 +571,7 @@
         <article class="paper" id="paper-crossover">
           <div class="pub-thumb"><video src="images/crossover_teaser.mp4" poster="images/crossover_teaser.jpg" autoplay muted loop playsinline preload="metadata" aria-label="CrossOver"></video></div>
           <div class="paper-content">
-            <div class="paper-meta"><span class="venue">CVPR 2025</span><span class="pub-award">Highlight</span></div>
+            <div class="paper-meta"><span class="venue">CVPR 2025</span><span class="pub-award">Highlight</span><a class="pub-award" href="https://opensun3d.github.io/index_cvpr25.html" target="_blank">Extended Abstract @ CVPR 2025 OpenSUN3D Workshop</a></div>
             <h3 class="paper-title"><a href="https://sayands.github.io/crossover/" target="_blank">CrossOver: 3D Scene Cross-Modal Alignment</a></h3>
             <p class="authors"><strong>Sayan Deb Sarkar</strong>, Ondrej Miksik, Marc Pollefeys, Dániel Béla Baráth, Iro Armeni</p>
             <p class="paper-summary">Cross-modal alignment method for 3D scenes that learns a modality-agnostic embedding space, enabling scene-level alignment without semantic annotations.</p>
@@ -543,6 +579,7 @@
               <a href="https://arxiv.org/pdf/2502.15011" target="_blank"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i>Paper</a>
               <a href="https://sayands.github.io/crossover/" target="_blank"><i class="fa-solid fa-globe" aria-hidden="true"></i>Project</a>
               <a href="https://github.com/GradientSpaces/CrossOver/" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>
+              <a href="https://x.com/debsarkar_sayan/status/1894859692838678941" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i>Thread</a>
             </div>
             <div class="paper-featured"><span class="featured-label">Featured in</span><a href="https://www.openrobotics.org/" target="_blank">Open Robotics</a></div>
           </div>
@@ -552,7 +589,7 @@
         <article class="paper" id="paper-sgaligner">
           <div class="pub-thumb"><img src="images/sgaligner_teaser.jpg" alt="SGAligner" loading="lazy"></div>
           <div class="paper-content">
-            <div class="paper-meta"><span class="venue">ICCV 2023</span></div>
+            <div class="paper-meta"><span class="venue">ICCV 2023</span><a class="pub-award" href="https://cvaad-workshop.github.io/papers/" target="_blank">Poster Panel @ ICCV 2023 CVAAD Workshop</a></div>
             <h3 class="paper-title"><a href="https://sayands.github.io/sgaligner/" target="_blank">SGAligner: 3D Scene Alignment with Scene Graphs</a></h3>
             <p class="authors"><strong>Sayan Deb Sarkar</strong>, Ondrej Miksik, Marc Pollefeys, Dániel Béla Baráth, Iro Armeni</p>
             <p class="paper-summary">3D Scene Graph Alignment robust to in-the-wild scenarios powering point cloud registration and map integration.</p>
@@ -560,6 +597,7 @@
               <a href="https://arxiv.org/pdf/2304.14880/pdf" target="_blank"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i>Paper</a>
               <a href="https://sayands.github.io/sgaligner/" target="_blank"><i class="fa-solid fa-globe" aria-hidden="true"></i>Project</a>
               <a href="https://github.com/sayands/sgaligner" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>
+              <a href="https://x.com/debsarkar_sayan/status/1679767952953069569" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i>Thread</a>
             </div>
             <div class="paper-featured"><span class="featured-label">Featured in</span><a href="https://www.rsipvision.com/ComputerVisionNews-2023October/3/" target="_blank">RSIP Computer Vision Magazine</a><a href="https://x.com/LearnOpenCV/status/1709160252430860686" target="_blank">Learn OpenCV Blog</a></div>
           </div>
@@ -614,11 +652,35 @@
         </article>
     </section>
 
+    <section class="sec background" id="background">
+      <h2 class="sec-title">Background</h2>
+      <div class="bg-grid">
+        <div>
+          <h3 class="bg-heading">Experience</h3>
+          <ul class="bg-list">
+          <li><div class="bg-main"><span class="bg-org"><a href="https://waymo.com/" target="_blank">Waymo Perception</a></span><span class="bg-role">PhD Research Intern · Mountain View</span></div><span class="bg-date">Summer 2026</span></li>
+          <li><div class="bg-main"><span class="bg-org"><a href="https://www.microsoft.com/en-us/research/lab/spatial-ai-zurich/" target="_blank">Microsoft Spatial AI Lab</a></span><span class="bg-role">Research Scientist Intern · Zurich</span></div><span class="bg-date">Summer 2025</span></li>
+          <li><div class="bg-main"><span class="bg-org"><a href="https://www.qualcomm.com/research/extended-reality" target="_blank">Qualcomm XR</a></span><span class="bg-role">Research Engineer Intern · Amsterdam</span></div><span class="bg-date">2023</span></li>
+          <li><div class="bg-main"><span class="bg-org"><a href="https://www.mbrdi.co.in/" target="_blank">Mercedes-Benz R&amp;D</a></span><span class="bg-role">Computer Vision Research Engineer · Bangalore</span></div><span class="bg-date">2021–2022</span></li>
+          <li><div class="bg-main"><span class="bg-org"><a href="https://ivc.tugraz.at/" target="_blank">IVC, TU Graz</a></span><span class="bg-role">Research Engineer · Graz</span></div><span class="bg-date">2020–2021</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="bg-heading">Education</h3>
+          <ul class="bg-list">
+          <li><div class="bg-main"><span class="bg-org"><a href="https://www.stanford.edu/" target="_blank">Stanford University</a></span><span class="bg-role">Ph.D. in Computer Vision</span></div><span class="bg-date">2024–</span></li>
+          <li><div class="bg-main"><span class="bg-org"><a href="https://ethz.ch/en.html" target="_blank">ETH Zurich</a></span><span class="bg-role">M.Sc. in Computer Science</span></div><span class="bg-date">2022–2024</span></li>
+          <li><div class="bg-main"><span class="bg-org"><a href="https://manipal.edu/mit.html" target="_blank">Manipal Institute of Technology</a></span><span class="bg-role">B.Tech. in Information Technology</span></div><span class="bg-date">2016–2020</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section class="sec">
       <h2 class="sec-title">Supervision</h2>
       <ul class="col-list">
         <li><div class="col-item"><a href="https://www.linkedin.com/in/rachita-agrawal-1842b61a0/" target="_blank">Rachita Agrawal</a> <span class="col-meta">2026–now</span></div><div class="col-detail">M.Sc. Data Science student at ETH Zurich</div></li>
-        <li><div class="col-item"><a href="https://kevinqu7.github.io/" target="_blank">Kevin Qu</a> <span class="col-meta">2025–2026</span></div><div class="col-detail">M.Sc. Robotics student at ETH Zurich, now a Ph.D. student in <a href="https://vlg.inf.ethz.ch/" target="_blank">Siyu Tang’s group</a></div></li>
+        <li><div class="col-item"><a href="https://kevinqu7.github.io/" target="_blank">Kevin Qu</a> <span class="col-meta">2025–2026</span></div><div class="col-detail">M.Sc. Robotics student at ETH Zurich, now a CS Ph.D. student in Prof. <a href="https://vlg.inf.ethz.ch/" target="_blank">Siyu Tang’s group</a> at ETH Zurich</div></li>
         <li><div class="col-item"><a href="https://insait.ai/luka-milivojevic/" target="_blank">Luka Milivojević</a> <span class="col-meta">2025–2026</span></div><div class="col-detail">Summer Research Fellow at <a href="https://insait.ai/" target="_blank">INSAIT</a>, now an MPhil student at the <a href="https://www.cam.ac.uk/" target="_blank">University of Cambridge</a></div></li>
       </ul>
     </section>
@@ -642,7 +704,9 @@
     </section>
 
     <footer class="footer">
-      Last updated September 2026
+      <span>© 2026 Sayan Deb Sarkar</span>
+      <span>Last updated September 2026 · Template adapted from this <a class="footer-credit" href="https://jonbarron.info/" target="_blank">awesome website</a></span>
+      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
     </footer>
   </div>
 
