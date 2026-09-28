@@ -280,13 +280,14 @@
     .talk-host { display: block; color: var(--faint); font-size: 13px; }
 
     /* Research directions (format from taosun.io) */
-    .research-directions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 4px; }
+    .research-directions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 4px; }
     .direction { padding-left: 16px; background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.45) 0%, rgba(var(--accent-rgb), 0.08) 85%, transparent 100%) left top / 1px 100% no-repeat; }
     .direction-number { font-size: 12px; font-weight: 700; letter-spacing: 1px; color: var(--accent); }
     .direction h3 { font-family: var(--serif); font-size: 17px; font-weight: 600; margin: 6px 0 6px; color: var(--ink); }
     .sec .direction p { font-size: 13px; line-height: 1.6; color: var(--muted); margin: 0; }
-    .sec .direction-papers { margin-top: 8px; font-size: 13px; }
-    .direction-sep { margin: 0 6px; color: var(--sep); }
+    .sec .direction-papers { margin-top: 8px; font-size: 13px; overflow: hidden; }
+    .direction-papers > span { display: flex; flex-wrap: wrap; margin-left: -15px; }
+    .direction-papers a::before { content: "·"; display: inline-block; width: 15px; text-align: center; color: var(--sep); }
 
     /* Get in touch (format from taosun.io) */
     .contact { display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-top: 24px; padding: 28px 0 32px; }
@@ -391,7 +392,7 @@
       <div class="intro-copy">
         <h2 class="sec-title">About Me</h2>
         <div class="biography">
-          <p>I am a PhD candidate (2024–) in the <a href="https://gradientspaces.stanford.edu/">Gradient Spaces Group</a> at Stanford University, advised by Prof. <a href="https://ir0.github.io/">Iro Armeni</a>, and part of the <a href="https://svl.stanford.edu/">Stanford Vision Lab</a>. During my PhD, I have interned at <a href="https://waymo.com/">Waymo Perception</a> (Summer ’26), working on streaming temporal reasoning, and at <a href="https://www.microsoft.com/en-us/research/lab/spatial-ai-zurich/">Microsoft Spatial AI Lab</a> (Summer ’25), working on efficient video tokenization. I am partly supported by a <a href="https://arvr.google.com/">Google XR</a> grant on 4D understanding.</p>
+          <p>I am a PhD candidate (2024–) in the <a href="https://gradientspaces.stanford.edu/">Gradient Spaces Group</a> at Stanford University, advised by Prof. <a href="https://ir0.github.io/">Iro Armeni</a> (part of <a href="https://svl.stanford.edu/">Stanford Vision and Learning Lab - SVL</a>). During my PhD, I have interned at <a href="https://waymo.com/">Waymo Perception</a> (Summer ’26) and <a href="https://www.microsoft.com/en-us/research/lab/spatial-ai-zurich/">Microsoft Spatial AI Lab</a> (Summer ’25). I am partly supported by a <a href="https://arvr.google.com/">Google XR</a> grant on 4D understanding.</p>
           <p>My research focuses on <strong>spatial intelligence</strong> and <strong>multimodal video understanding</strong>. I build efficient visual representations that capture space and time, align real-world 3D scenes across modalities, and enable controllable built-environment generation.</p>
           <p>Before PhD, I received my M.Sc. in Computer Science from <a href="https://ethz.ch/en.html">ETH Zurich</a>, advised by Prof. <a href="https://people.inf.ethz.ch/marc.pollefeys/">Marc Pollefeys</a>, during which I interned at <a href="https://www.qualcomm.com/research/extended-reality">Qualcomm XR</a> working on real-time SLAM.
             Earlier, I was a computer vision research engineer at <a href="https://www.mbrdi.co.in/">Mercedes-Benz R&amp;D</a> and spent a year in Prof. <a href="https://vincentlepetit.github.io/">Vincent Lepetit</a>'s lab at TU Graz working on hand-object pose estimation.</p>
@@ -411,28 +412,28 @@
     <section class="sec news" id="news">
       <h2 class="sec-title">News</h2>
       <div class="news-list">
-        <div class="news-item"><time datetime="2026-09">Sep 2026</time><p><a href="https://microsoft.github.io/CoPE/" target="_blank">CoPE-VideoLM</a> + 1 more accepted to <strong>NeurIPS 2026</strong>, more details soon! See you in Paris 🇫🇷 or Sydney 🇦🇺🤞✈️🌏</p></div>
+        <div class="news-item"><time datetime="2026-09">Sep 2026</time><p><a href="https://microsoft.github.io/CoPE/" target="_blank">CoPE-VideoLM</a> (lead author) and <a href="https://graphwrit3r.insait.ai/" target="_blank">GraphWrit3R</a> accepted to <strong>NeurIPS 2026</strong>. See you in Paris 🇫🇷 or Sydney 🇦🇺🤞✈️🌏</p></div>
         <div class="news-item"><time datetime="2026-06">Jun 2026</time><p>I joined <strong><a href="https://waymo.com/" target="_blank">Waymo Perception</a></strong> (Mountain View) as a research intern, working on streaming temporal reasoning.</p></div>
         <div class="news-item"><time datetime="2026-05">May 2026</time><p>Recognized as an <span class="pub-award">Outstanding Reviewer</span> at <a href="https://cvpr.thecvf.com/" target="_blank">CVPR 2026</a>. Very proud of this!</p></div>
         <div class="news-item"><time datetime="2026-04">Apr 2026</time><p>Invited talks on <a href="data/invitedtalk_cope_2026.pdf" target="_blank">“Codec Primitives for Efficient Video Understanding”</a> at <strong>Google DeepMind</strong> and <strong>Valeo AI</strong> in Paris.</p></div>
         <div class="news-item"><time datetime="2026-03">Mar 2026</time><p><a href="https://microsoft.github.io/CoPE/" target="_blank">CoPE-VideoLM</a> is out: efficient codec-aware tokenization for video understanding.</p></div>
         <div class="news-item"><time datetime="2026-01">Jan 2026</time><p>Invited talk on <a href="https://sayands.github.io/guideflow3d/" target="_blank">GuideFlow3D</a> at <a href="https://voxel51.com/events/best-of-neurips-january-15-2026" target="_blank">Voxel51 Best of NeurIPS</a>.</p></div>
-        <div class="news-item"><time datetime="2025-09">Sep 2025</time><p><a href="https://sayands.github.io/guideflow3d/" target="_blank">GuideFlow3D</a> was accepted to <strong>NeurIPS 2025</strong>. See you in San Diego 🇺🇸🌴</p></div>
+        <div class="news-item"><time datetime="2025-09">Sep 2025</time><p><a href="https://sayands.github.io/guideflow3d/" target="_blank">GuideFlow3D</a> accepted to <strong>NeurIPS 2025</strong>. See you in San Diego 🇺🇸🌴</p></div>
         <div class="news-item"><time datetime="2025-07">Jul 2025</time><p>Invited talks on <a href="data/invitedtalk_crossover_2025.pdf" target="_blank">“Scalable Cross-Modal 3D Scene Understanding”</a> at <strong>Google XR Research</strong> and <strong>Imagine Lab</strong>.</p></div>
       </div>
       <details class="news-more">
         <summary><span class="news-show-more">Show more</span><span class="news-show-less">Show less</span></summary>
         <div class="news-list">
           <div class="news-item"><time datetime="2025-06">Jun 2025</time><p>I joined <strong><a href="https://www.microsoft.com/en-us/research/lab/spatial-ai-zurich/" target="_blank">Microsoft Spatial AI Lab</a></strong> (Zurich) as a research intern, working on efficient video tokenization.</p></div>
-          <div class="news-item"><time datetime="2025-03">Mar 2025</time><p><a href="https://sayands.github.io/crossover/" target="_blank">CrossOver</a> was accepted to <strong>CVPR 2025</strong> as a <span class="pub-award">Highlight</span>. See you in Nashville 🇺🇸🎸</p></div>
+          <div class="news-item"><time datetime="2025-03">Mar 2025</time><p><a href="https://sayands.github.io/crossover/" target="_blank">CrossOver</a> accepted to <strong>CVPR 2025</strong> as a <span class="pub-award">Highlight</span>. See you in Nashville 🇺🇸🎸</p></div>
           <div class="news-item"><time datetime="2024-09">Sep 2024</time><p><span class="news-flag">Career update</span> I joined <strong><a href="https://www.stanford.edu/" target="_blank">Stanford University</a></strong> as a PhD student in Computer Vision.</p></div>
           <div class="news-item"><time datetime="2023-08">Aug 2023</time><p>I joined <strong><a href="https://www.qualcomm.com/research/extended-reality" target="_blank">Qualcomm XR</a></strong> (Amsterdam) as a research intern, working on real-time SLAM for extended reality.</p></div>
-          <div class="news-item"><time datetime="2023-07">Jul 2023</time><p><a href="https://sayands.github.io/sgaligner/" target="_blank">SGAligner</a> was accepted to <strong>ICCV 2023</strong>. See you in Paris 🇫🇷🥐</p></div>
+          <div class="news-item"><time datetime="2023-07">Jul 2023</time><p><a href="https://sayands.github.io/sgaligner/" target="_blank">SGAligner</a> accepted to <strong>ICCV 2023</strong>. See you in Paris 🇫🇷🥐</p></div>
           <div class="news-item"><time datetime="2022-09">Sep 2022</time><p>I started my MSc in Computer Science at <strong>ETH Zurich</strong>.</p></div>
-          <div class="news-item"><time datetime="2022-07">Jul 2022</time><p><a href="https://arxiv.org/abs/2104.14639" target="_blank">Keypoint Transformer</a> was accepted to <strong>CVPR 2022</strong> as an <span class="pub-award">Oral</span>. See you in New Orleans 🇺🇸🎷</p></div>
+          <div class="news-item"><time datetime="2022-07">Jul 2022</time><p><a href="https://arxiv.org/abs/2104.14639" target="_blank">Keypoint Transformer</a> accepted to <strong>CVPR 2022</strong> as an <span class="pub-award">Oral</span>. See you in New Orleans 🇺🇸🎷</p></div>
           <div class="news-item"><time datetime="2021-05">May 2021</time><p>I joined <strong><a href="https://www.mbrdi.co.in/" target="_blank">Mercedes-Benz R&amp;D</a></strong> as a Computer Vision Research Engineer.</p></div>
-          <div class="news-item"><time datetime="2021-03">Mar 2021</time><p><a href="https://arxiv.org/abs/2103.07969" target="_blank">Monte Carlo Scene Search</a> was accepted to <strong>CVPR 2021</strong> 🎉</p></div>
-          <div class="news-item"><time datetime="2020-06">Jun 2020</time><p><a href="https://arxiv.org/abs/2001.02149" target="_blank">General 3D Room Layout from a Single View by Render-and-Compare</a> was accepted to <strong>ECCV 2020</strong> 🎉</p></div>
+          <div class="news-item"><time datetime="2021-03">Mar 2021</time><p><a href="https://arxiv.org/abs/2103.07969" target="_blank">Monte Carlo Scene Search</a> accepted to <strong>CVPR 2021</strong> 🎉</p></div>
+          <div class="news-item"><time datetime="2020-06">Jun 2020</time><p><a href="https://arxiv.org/abs/2001.02149" target="_blank">General 3D Room Layout from a Single View by Render-and-Compare</a> accepted to <strong>ECCV 2020</strong> 🎉</p></div>
           <div class="news-item"><time datetime="2020-01">Jan 2020</time><p>I started as a Research Assistant at <a href="https://ivc.tugraz.at/" target="_blank">IVC, TU Graz</a> with Prof. <a href="https://vincentlepetit.github.io/" target="_blank">Vincent Lepetit</a>, supported by a Qualcomm fellowship.</p></div>
         </div>
       </details>
@@ -472,19 +473,19 @@
           <span class="direction-number" aria-hidden="true">01</span>
           <h3>Visual Representation Learning</h3>
           <p>Efficient visual encoders for spatial and video understanding.</p>
-          <p class="direction-papers"><a href="#paper-cope-videolm">CoPE-VideoLM</a></p>
+          <p class="direction-papers"><span><a href="#paper-cope-videolm">CoPE-VideoLM</a></span></p>
         </div>
         <div class="direction">
           <span class="direction-number" aria-hidden="true">02</span>
           <h3>Controllable Generation</h3>
           <p>Guiding pre-trained generative models to control shape and appearance.</p>
-          <p class="direction-papers"><a href="#paper-spaceflow">SpaceFlow</a><span class="direction-sep" aria-hidden="true">·</span><a href="#paper-guideflow3d">GuideFlow3D</a></p>
+          <p class="direction-papers"><span><a href="#paper-spaceflow">SpaceFlow</a><a href="#paper-guideflow3d">GuideFlow3D</a></span></p>
         </div>
         <div class="direction">
           <span class="direction-number" aria-hidden="true">03</span>
           <h3>3D Scene Understanding</h3>
-          <p>Understanding real-world environments, from alignment to affordances.</p>
-          <p class="direction-papers"><a href="#paper-crossover">CrossOver</a><span class="direction-sep" aria-hidden="true">·</span><a href="#paper-sgaligner">SGAligner</a><span class="direction-sep" aria-hidden="true">·</span><a href="#paper-famos">FAMOS</a></p>
+          <p>Structuring and aligning real-world environments across modalities.</p>
+          <p class="direction-papers"><span><a href="#paper-graphwrit3r">GraphWrit3R</a><a href="#paper-crossover">CrossOver</a><a href="#paper-sgaligner">SGAligner</a></span></p>
         </div>
       </div>
     </section>
@@ -508,6 +509,20 @@
               <a href="https://arxiv.org/abs/2602.13191" target="_blank"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i>Paper</a>
               <a href="https://microsoft.github.io/CoPE/" target="_blank"><i class="fa-solid fa-globe" aria-hidden="true"></i>Project</a>
               <a href="https://x.com/debsarkar_sayan/status/2023472912666411342" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i>Thread</a>
+            </div>
+          </div>
+        </article>
+        <article class="paper" id="paper-graphwrit3r">
+          <div class="pub-thumb"><video src="images/graphwrit3r_teaser.mp4" poster="images/graphwrit3r_teaser.jpg" autoplay muted loop playsinline preload="metadata" aria-label="GraphWrit3R"></video></div>
+          <div class="paper-content">
+            <div class="paper-meta"><span class="venue">NeurIPS 2026</span></div>
+            <h3 class="paper-title"><a href="https://graphwrit3r.insait.ai/" target="_blank">GraphWrit3R: End-to-End 3D Scene Graph Writing</a></h3>
+            <p class="authors">Luka Milivojević, Nikola Popović†, <strong>Sayan Deb Sarkar</strong>, Sebastian Koch, Iro Armeni, Luc Van Gool, Danda Pani Paudel</p>
+            <p class="paper-summary">Writes complete 3D scene graphs as structured JSON directly from point clouds, Gaussian Splats, or both, without ground-truth object annotations.</p>
+            <div class="paper-links">
+              <a href="https://arxiv.org/abs/2609.31595" target="_blank"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i>Paper</a>
+              <a href="https://graphwrit3r.insait.ai/" target="_blank"><i class="fa-solid fa-globe" aria-hidden="true"></i>Project</a>
+              <a href="https://github.com/insait-institute/GraphWrit3R" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i>Code</a>
             </div>
           </div>
         </article>
@@ -689,8 +704,8 @@
     <section class="sec">
       <h2 class="sec-title">Academic Services</h2>
       <ul class="col-list">
-        <li><div class="col-item">Workshop Organization</div><div class="col-detail"><a href="https://cv4aec.github.io/" target="_blank">CV4AEC @ CVPR</a> 2023, 2024, 2026</div></li>
-        <li><div class="col-item">Conference Reviewer</div><div class="col-detail">CVPR, ICCV, ECCV, NeurIPS, ICRA · Outstanding Reviewer, CVPR 2026</div></li>
+        <li><div class="col-item">Organization</div><div class="col-detail"><a href="https://cv4aec.github.io/" target="_blank">CV4AEC @ CVPR</a> 2023, 2024, 2026</div></li>
+        <li><div class="col-item">Reviewing</div><div class="col-detail">CVPR, ICCV, ECCV, NeurIPS, ICRA, RA-L · Outstanding Reviewer, CVPR 2026</div></li>
         <li><div class="col-item">Teaching</div><div class="col-detail">Head TA, <a href="https://gradientspaces.stanford.edu/computer-vision-built-environment" target="_blank">Computer Vision for the Built Environment</a>, Stanford · Winter 2025, 2026</div></li>
       </ul>
     </section>
@@ -726,6 +741,12 @@
         try { localStorage.setItem('theme', next); } catch (e) {}
       });
     })();
+    document.querySelectorAll('video').forEach(function(v) {
+      v.muted = true;
+      v.loop = true;
+      v.addEventListener('ended', function() { v.currentTime = 0; v.play().catch(function() {}); });
+      v.play().catch(function() {});
+    });
     function toggleBlock(blockId) {
       var block = document.getElementById(blockId);
       if (block.style.display === 'none') {
