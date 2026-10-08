@@ -77,6 +77,7 @@
     .social-links a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
     .biography p { font-size: 14.5px; line-height: 1.7; margin: 0 0 14px; }
     .biography strong { font-weight: 700; }
+    .biography sup { font-size: 0.7em; line-height: 0; }
     .intro-interests { margin-top: 18px; }
     .intro-interests h2 { font-family: var(--serif); font-size: 19px; font-weight: 500; margin: 0; }
     .intro-interests ul { display: flex; flex-wrap: wrap; list-style: none; margin: 6px 0 0; padding: 0; font-size: 13.5px; line-height: 1.7; }
@@ -392,7 +393,7 @@
       <div class="intro-copy">
         <h2 class="sec-title">About Me</h2>
         <div class="biography">
-          <p>I am a PhD candidate (2024–) in the <a href="https://gradientspaces.stanford.edu/">Gradient Spaces Group</a> at Stanford University, advised by Prof. <a href="https://ir0.github.io/">Iro Armeni</a> (part of <a href="https://svl.stanford.edu/">Stanford Vision and Learning Lab - SVL</a>). During my PhD, I have interned at <a href="https://waymo.com/">Waymo Perception</a> (Summer ’26) and <a href="https://www.microsoft.com/en-us/research/lab/spatial-ai-zurich/">Microsoft Spatial AI Lab</a> (Summer ’25). I am partly supported by a <a href="https://arvr.google.com/">Google XR</a> grant on 4D understanding.</p>
+          <p>I am a <s>2<sup>nd</sup></s> 3<sup>rd</sup>-year PhD student (2024–) in the <a href="https://gradientspaces.stanford.edu/">Gradient Spaces Group</a> at Stanford University, advised by Prof. <a href="https://ir0.github.io/">Iro Armeni</a> (part of <a href="https://svl.stanford.edu/">Stanford Vision and Learning Lab - SVL</a>). During my PhD, I have interned at <a href="https://waymo.com/">Waymo Perception</a> (Summer ’26) and <a href="https://www.microsoft.com/en-us/research/lab/spatial-ai-zurich/">Microsoft Spatial AI Lab</a> (Summer ’25). I am partly supported by a <a href="https://arvr.google.com/">Google XR</a> grant on 4D understanding.</p>
           <p>My research focuses on <strong>spatial intelligence</strong> and <strong>multimodal video understanding</strong>. I build efficient visual representations that capture space and time, align real-world 3D scenes across modalities, and enable controllable built-environment generation.</p>
           <p>Before PhD, I received my M.Sc. in Computer Science from <a href="https://ethz.ch/en.html">ETH Zurich</a>, advised by Prof. <a href="https://people.inf.ethz.ch/marc.pollefeys/">Marc Pollefeys</a>, during which I interned at <a href="https://www.qualcomm.com/research/extended-reality">Qualcomm XR</a> working on real-time SLAM.
             Earlier, I was a computer vision research engineer at <a href="https://www.mbrdi.co.in/">Mercedes-Benz R&amp;D</a> and spent a year in Prof. <a href="https://vincentlepetit.github.io/">Vincent Lepetit</a>'s lab at TU Graz working on hand-object pose estimation.</p>
@@ -517,7 +518,7 @@
           <div class="paper-content">
             <div class="paper-meta"><span class="venue">NeurIPS 2026</span></div>
             <h3 class="paper-title"><a href="https://graphwrit3r.insait.ai/" target="_blank">GraphWrit3R: End-to-End 3D Scene Graph Writing</a></h3>
-            <p class="authors">Luka Milivojević, Nikola Popović†, <strong>Sayan Deb Sarkar</strong>, Sebastian Koch, Iro Armeni, Luc Van Gool, Danda Pani Paudel</p>
+            <p class="authors">Luka Milivojević, Nikola Popović, <strong>Sayan Deb Sarkar</strong>, Sebastian Koch, Iro Armeni, Luc Van Gool, Danda Pani Paudel</p>
             <p class="paper-summary">Writes complete 3D scene graphs as structured JSON directly from point clouds, Gaussian Splats, or both, without ground-truth object annotations.</p>
             <div class="paper-links">
               <a href="https://arxiv.org/abs/2609.31595" target="_blank"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i>Paper</a>
@@ -529,7 +530,7 @@
         <article class="paper" id="paper-spaceflow">
           <div class="pub-thumb"><video src="images/spaceflow_teaser.mp4" poster="images/spaceflow_teaser.jpg" autoplay muted loop playsinline preload="metadata" aria-label="SpaceFlow teaser video"></video></div>
           <div class="paper-content">
-            <div class="paper-meta"><span class="venue">Preprint</span><span class="venue-note">Under review</span></div>
+            <div class="paper-meta"><span class="venue">Preprint 2026</span><span class="venue-note">Under review</span></div>
             <h3 class="paper-title"><a href="https://neilus03.github.io/spaceflow/" target="_blank">SpaceFlow: Locally Controllable 3D Generation</a></h3>
             <p class="authors">Neil De La Fuente*, Joan Lafuente Baeza*, Mukhammadali Sayfiddinov*, Felicia Scharitzer*, Marc Pollefeys, Ata Çelen, <strong>Sayan Deb Sarkar</strong>†, Elisabetta Fedele†</p>
             <p class="paper-summary">Training-free 3D generation from geometric primitives, with per-part control over shape adherence and part-specific text or image appearance cues.</p>
@@ -542,7 +543,7 @@
         <article class="paper" id="paper-famos">
           <div class="pub-thumb"><video src="images/famos_teaser.mp4" poster="images/famos_teaser.jpg" autoplay muted loop playsinline preload="metadata" aria-label="FAMOS"></video></div>
           <div class="paper-content">
-            <div class="paper-meta"><span class="venue">Preprint</span><span class="venue-note">Under review</span><a class="pub-award" href="https://diliash.github.io/fai_eccv_workshop_2026/" target="_blank">Poster @ ECCV 2026 FAI Workshop</a></div>
+            <div class="paper-meta"><span class="venue">Preprint 2026</span><a class="pub-award" href="https://diliash.github.io/fai_eccv_workshop_2026/" target="_blank">Poster @ ECCV 2026 FAI Workshop</a></div>
             <h3 class="paper-title"><a href="https://kevinqu7.github.io/famos" target="_blank">FAMOS: Feed-Forward 3D Articulation Modeling from Sparse Observations</a></h3>
             <p class="authors">Kevin Qu, Tao Sun, Massimiliano Viola, Liyuan Zhu, Zhizhuo Zhou, <strong>Sayan Deb Sarkar</strong>, Konrad Schindler, Iro Armeni</p>
             <p class="paper-summary">A feed-forward model that predicts movable parts and joint parameters of articulated objects from a sparse, unordered set of partial point clouds.</p>
@@ -573,7 +574,7 @@
         <article class="paper" id="paper-sgaligner-pp">
           <div class="pub-thumb"><video src="images/sgalignerpp_teaser.mp4" poster="images/sgalignerpp_teaser.jpg" autoplay muted loop playsinline preload="metadata" aria-label="SGAligner++"></video></div>
           <div class="paper-content">
-            <div class="paper-meta"><span class="venue">Preprint</span></div>
+            <div class="paper-meta"><span class="venue">Preprint 2025</span></div>
             <h3 class="paper-title"><a href="https://singhbino3d.github.io/sgpp/" target="_blank">SGAligner++: Cross-Modal Language-Aided 3D Scene Graph Alignment</a></h3>
             <p class="authors">Binod Singh, <strong>Sayan Deb Sarkar</strong>, Iro Armeni</p>
             <p class="paper-summary">Extends SGAligner with open-vocabulary cues and learned joint embeddings to align 3D scene graphs across modalities, even under low overlap and sensor noise.</p>
